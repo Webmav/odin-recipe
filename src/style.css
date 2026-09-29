@@ -214,9 +214,10 @@ nav h1 {
         .nav-paragraphs {
             display: flex;
             flex-direction: column;
-            margin: 250px;
             justify-content: center;
             align-items: center;
+
+            padding: var(--size-925);
         }
         
         .yooo {
@@ -226,8 +227,8 @@ nav h1 {
             justify-content: center;
 
             position: absolute;
-            top: 20%;
-            left: 15%;
+            top: 10%;
+            right: 35%;
 
             background-color: var(--clr-neutral-100);
             max-width: 500px;
@@ -253,6 +254,11 @@ footer {
 }
 
 @media (max-width: 50em) {
+    footer {
+        margin-inline: auto;
+        padding-inline: calc(139px / 2);
+    }
+
     .footer-wrapper {
         grid-template-areas: 
         "form"
