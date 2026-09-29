@@ -1,5 +1,4 @@
 :root {
-
     --ff-primary: 'Inria Serif', 'Times New Roman', sans-serif;
 
     --ff-heading: var(--ff-primary);
@@ -238,6 +237,94 @@ nav h1 {
     }
 }
 
+/* footer */
+
+footer {
+    margin-inline: auto;
+    padding-inline: 139px;
+}
+
+.footer-wrapper {
+    display: grid;
+    grid-template-areas: 
+    "logo menu form"
+    "social-icons menu copyright"
+    ;
+}
+
+@media (max-width: 50em) {
+    .footer-wrapper {
+        grid-template-areas: 
+        "form"
+        "menu"
+        "logo"
+        "social-icons"
+        "copyright"
+        ;
+        margin-inline: auto;
+        justify-content: center;
+    }
+    
+    .footer-wrapper > * {
+        margin-inline: auto;
+        justify-content: center;
+    }
+}
+
+.logo {
+    grid-area: logo;
+}
+
+.footer-menu {
+    grid-area: menu;
+}
+
+.form {
+    grid-area: form;
+
+    min-width: 100px;
+    justify-self: end;
+}
+
+.social-icons {
+    grid-area: social-icons;
+
+    display: flex;
+}
+
+.copyright {
+    grid-area: copyright;
+
+    font-size: var(--fs-300) !important;
+}
+
+@media (min-width: 50em) {
+    .copyright {
+        justify-self: end;
+        padding-right: clamp(var(--size-100), 10vm, var(--size-925));
+        align-self: end;
+        grid-area: copyright;
+        font-size: var(--fs-300) !important;
+    }
+}
+
+/* form */
+
+.form input {
+    display: inline-flex;
+    cursor: pointer;
+    border: 0;
+    border-radius: 100vmax;
+    font-weight: var(--fw-regular);
+    font-size: var(--fs-button);
+    background-color: var(--clr-accent-500);
+    text-decoration: none;
+    min-width: var(--size-100);
+    min-height: var(--size-100);
+    padding: .25em 1.25em;
+}
+
+
 
 
 
@@ -318,6 +405,17 @@ nav h1 {
     padding-block: var(--size-600);
 }
 
+
 .off{
     display: none;
 }
+
+.even-columns {
+    columns: 2;
+}
+
+
+/*
+make it so that menu list and close button scroll with page scrolling and 
+make background grey while scrolling
+*/
