@@ -46,7 +46,23 @@
     --fs-nav: var(--fs-500);
     --fs-button: var(--fs-secondary-heading);
     --fs-p: var(--fs-500);
+
+
+    --padding-block-100: var(--size-100);
+    --padding-block-200: var(--size-200);
+    --padding-block-300: var(--size-300);
+    --padding-block-400: var(--size-400);
+    --padding-block-500: var(--size-500);
+    --padding-block-600: var(--size-600);
+    
+    --padding-inline-100: var(--size-100);
+    --padding-inline-200: var(--size-200);
+    --padding-inline-300: var(--size-300);
+    --padding-inline-400: var(--size-400);
+    --padding-inline-500: var(--size-500);
+    --padding-inline-600: var(--size-600);
 }
+
 
 
 
@@ -246,7 +262,7 @@ nav h1 {
 /* footer */
 
 .footer-wrapper {
-    margin-inline: 139px;
+    margin-inline: var(--size-925);
     display: grid;
     grid-template-areas: 
     "logo menu form"
@@ -255,7 +271,6 @@ nav h1 {
 }
 
 @media (max-width: 50em) {
-
     .footer-wrapper {
         gap: clamp(var(--size-100), 5vm, var(--size-925));
         margin-inline: var(--size-925);
@@ -271,9 +286,12 @@ nav h1 {
     }
     
     .footer-wrapper > * {
+        padding-block: var(--padding-block-300);
         margin-inline: auto;
         justify-content: center;
     }
+
+
 }
 
 .logo {
@@ -284,10 +302,18 @@ nav h1 {
     grid-area: menu;
 }
 
+@media (max-width: 50em) {
+    .footer-menu{
+        columns: 1 !important;
+    }
+
+    .footer-menu p {
+        padding: var(--size-100) 0;
+    }
+}
+
 .form {
     grid-area: form;
-
-    min-width: 100px;
     justify-self: end;
 }
 
@@ -327,6 +353,28 @@ nav h1 {
     min-width: var(--size-100);
     min-height: var(--size-100);
     padding: .25em 1.25em;
+}
+
+@media (max-width: 50em) {
+    .form {
+        display: flex;
+        flex-direction: column;
+
+        align-content: center;
+
+        gap: var(--size-300);
+        margin-inline: auto;
+    }
+
+    .form button {
+        display: block;
+        margin: auto;
+    }
+    
+    .form input,
+    .form button {
+        padding: .125em .75em;
+    }
 }
 
 
@@ -406,28 +454,52 @@ nav h1 {
     font-size: var(--fs-p);
 }
 
+.padding-block-100 {
+    padding-block: var(--padding-block-100);
+}
+
+.padding-block-200 {
+    padding-block: var(--padding-block-200);
+}
+
+.padding-block-300 {
+    padding-block: var(--padding-block-300);
+}
+
 .padding-block-400 {
-    padding-block: var(--size-400);
+    padding-block: var(--padding-block-400);
 }
 
 .padding-block-500 {
-    padding-block: var(--size-500);
+    padding-block: var(--padding-block-500);
 }
 
 .padding-block-600 {
-    padding-block: var(--size-600);
+    padding-block: var(--padding-block-600);
+}
+
+.padding-inline-100 {
+    padding-inline: var(--padding-inline-100);
+}
+
+.padding-inline-200 {
+    padding-inline: var(--padding-inline-200);
+}
+
+.padding-inline-300 {
+    padding-inline: var(--padding-inline-300);
 }
 
 .padding-inline-400 {
-    padding-inline: var(--size-400);
+    padding-inline: var(--padding-inline-400);
 }
 
 .padding-inline-500 {
-    padding-inline: var(--size-500);
+    padding-inline: var(--padding-inline-500);
 }
 
 .padding-inline-600 {
-    padding-inline: var(--size-600);
+    padding-inline: var(--padding-inline-600);
 }
 
 
