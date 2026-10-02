@@ -191,7 +191,7 @@ nav h1 {
     flex-shrink: 0;
 }
 
-.nav-paragraphs {
+.menu-list {
     display: flex;
     gap: clamp(var(--size-400), 50vw, var(--size-900));
 }
@@ -207,20 +207,11 @@ nav h1 {
         display: none;
     }
 
-    .nav-paragraphs {
+    .menu-list {
         display: none;
     }
     .open {
-        .nav-paragraphs {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-
-            padding: var(--size-925);
-        }
-        
-        .yooo {
+        .menu-wrapper {
             display: flex;
             flex-direction: row;
             align-content: center;
@@ -228,24 +219,34 @@ nav h1 {
 
             position: absolute;
             top: 10%;
-            right: 35%;
+            right: 25%;
 
             background-color: var(--clr-neutral-100);
             max-width: 500px;
             max-height: 500px;
             box-shadow: .125rem .125rem 1rem var(--clr-neutral-900);
         }
+
+        .menu-list {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            padding: calc(var(--size-925) + var(--size-925));
+        }
+
+        .menu-list p:hover,
+        .menu-list p:focus-visible {
+            font-size: 24px;
+        }
     }
 }
 
 /* footer */
 
-footer {
-    margin-inline: auto;
-    padding-inline: 139px;
-}
-
 .footer-wrapper {
+    margin-inline: 139px;
     display: grid;
     grid-template-areas: 
     "logo menu form"
@@ -254,12 +255,10 @@ footer {
 }
 
 @media (max-width: 50em) {
-    footer {
-        margin-inline: auto;
-        padding-inline: calc(139px / 2);
-    }
 
     .footer-wrapper {
+        gap: clamp(var(--size-100), 5vm, var(--size-925));
+        margin-inline: var(--size-925);
         grid-template-areas: 
         "form"
         "menu"
@@ -407,8 +406,28 @@ footer {
     font-size: var(--fs-p);
 }
 
+.padding-block-400 {
+    padding-block: var(--size-400);
+}
+
+.padding-block-500 {
+    padding-block: var(--size-500);
+}
+
 .padding-block-600 {
     padding-block: var(--size-600);
+}
+
+.padding-inline-400 {
+    padding-inline: var(--size-400);
+}
+
+.padding-inline-500 {
+    padding-inline: var(--size-500);
+}
+
+.padding-inline-600 {
+    padding-inline: var(--size-600);
 }
 
 
