@@ -146,6 +146,7 @@ svg {
 
 
 
+
 /* general styling */
 
 body {
@@ -209,7 +210,7 @@ nav h1 {
 
 .menu-list {
     display: flex;
-    gap: clamp(var(--size-400), 50vw, var(--size-900));
+    gap: clamp(var(--size-100), 3vw, var(--size-900));
 }
 
 @media (min-width: 50em) {
@@ -259,6 +260,7 @@ nav h1 {
     }
 }
 
+
 /* footer */
 
 .footer-wrapper {
@@ -300,15 +302,16 @@ nav h1 {
 
 .footer-menu {
     grid-area: menu;
+    columns: 3;
 }
 
-@media (max-width: 50em) {
-    .footer-menu{
-        columns: 1 !important;
-    }
+.footer-menu p {
+    padding: var(--size-100) var(--size-400);
+}
 
-    .footer-menu p {
-        padding: var(--size-100) 0;
+@media (max-width: 40em) {
+    .footer-menu{
+        columns: 2 !important;
     }
 }
 
@@ -332,7 +335,7 @@ nav h1 {
 @media (min-width: 50em) {
     .copyright {
         justify-self: end;
-        padding-right: clamp(var(--size-100), 10vm, var(--size-925));
+        padding-right: calc(var(--size-900) + var(--size-900));
         align-self: end;
         grid-area: copyright;
         font-size: var(--fs-300) !important;
@@ -377,6 +380,78 @@ nav h1 {
     }
 }
 
+
+
+
+
+/* HOME */
+
+/* main */
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+/* primary heading */
+
+.primary-heading {
+    justify-self: center;
+    margin-inline: auto;
+}
+
+/* post wrapper */
+
+.post-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 50em) {
+    .post-wrapper {
+        display: grid;
+        justify-content: space-between;
+        grid-template-areas: 
+            "post-1 post-2"
+            "post-3 post-4"
+        ;
+    }
+}
+
+@media (max-width: 40em) {
+    .post-wrapper {
+        margin-inline: auto;
+        grid-template-areas: 
+            "post-1"
+            "post-2"
+            "post-3"
+            "post-4"
+        ;
+    }
+}
+
+@media (min-width: 40em) {
+    .post {
+        width: 300px;
+    }
+}
+
+.post > * {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.post > * > * {
+    justify-content: center;
+    margin-inline: auto;
+}
+
+.post h2 {
+    padding: var(--size-400) var(--size-200);
+}
+
+-------------------
 
 
 
