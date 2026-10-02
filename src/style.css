@@ -384,31 +384,29 @@ nav h1 {
 
 
 
-/* HOME */
+/* homepage */
 
-/* main */
-
-main {
+.homepage {
     display: flex;
     flex-direction: column;
 }
 
 /* primary heading */
 
-.primary-heading {
+.homepage .primary-heading {
     justify-self: center;
     margin-inline: auto;
 }
 
 /* post wrapper */
 
-.post-wrapper {
+.homepage .post-wrapper {
     display: flex;
     justify-content: space-between;
 }
 
 @media (max-width: 50em) {
-    .post-wrapper {
+    .homepage .post-wrapper {
         display: grid;
         justify-content: space-between;
         grid-template-areas: 
@@ -419,7 +417,7 @@ main {
 }
 
 @media (max-width: 40em) {
-    .post-wrapper {
+    .homepage .post-wrapper {
         margin-inline: auto;
         grid-template-areas: 
             "post-1"
@@ -431,23 +429,23 @@ main {
 }
 
 @media (min-width: 40em) {
-    .post {
+    .homepage .post {
         width: 300px;
     }
 }
 
-.post > * {
+.homepage .post > * {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.post > * > * {
+.homepage .post > * > * {
     justify-content: center;
     margin-inline: auto;
 }
 
-.post h2 {
+.homepage .post h2 {
     padding: var(--size-400) var(--size-200);
 }
 
